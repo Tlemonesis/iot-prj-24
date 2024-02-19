@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css">
+</head>
+
+<body>
+    <div class="contain">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">
+                            <h3>Smart home</h3>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fa fa-table" aria-hidden="true"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data.html" class="active">
+                        <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                        <span class="title">Data sensor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="action.html">
+                        <span class="icon"><i class="fa fa-history" aria-hidden="true"></i></span>
+                        <span class="title">Action history</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu();"></div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="./images/profile-1.jpg">
+                </div>
+            </div>
+            <div class="container">
+                <div class="data-table">
+                    <div>
+                        <h2>Data sensor</h2>
+                    </div>
+                    <table id="example" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Temperature (°C)</th>
+                                <th>Humidity (%)</th>
+                                <th>Light (lux)</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1001</td>
+                                <td>26</td>
+                                <td>50</td>
+                                <td>400</td>
+                                <td>16-Nov-2014 12:07:46 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1002</td>
+                                <td>25</td>
+                                <td>44</td>
+                                <td>300</td>
+                                <td>16-Nov-2014 12:35:10 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1003</td>
+                                <td>30</td>
+                                <td>53</td>
+                                <td>660</td>
+                                <td>16-Nov-2014 01:34:22 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1004</td>
+                                <td>31</td>
+                                <td>55</td>
+                                <td>220</td>
+                                <td>16-Nov-2014 01:38:15 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1005</td>
+                                <td>22</td>
+                                <td>50</td>
+                                <td>330</td>
+                                <td>16-Nov-2014 01:41:36 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1006</td>
+                                <td>27</td>
+                                <td>45</td>
+                                <td>610</td>
+                                <td>16-Nov-2014 02:05:17 PM</td>
+                            </tr>
+                            <tr>
+                                <td>1007</td>
+                                <td>21</td>
+                                <td>40</td>
+                                <td>590</td>
+                                <td>17-Nov-2014 07:13:51 AM</td>
+                            </tr>
+                            <tr>
+                                <td>1008</td>
+                                <td>20</td>
+                                <td>35</td>
+                                <td>550</td>
+                                <td>17-Nov-2014 07:53:52 AM</td>
+                            </tr>
+                            <tr>
+                                <td>1009</td>
+                                <td>19</td>
+                                <td>30</td>
+                                <td>390</td>
+                                <td>17-Nov-2014 09:16:56 AM</td>
+                            </tr>
+                            <tr>
+                                <td>1010</td>
+                                <td>18</td>
+                                <td>25</td>
+                                <td>230</td>
+                                <td>17-Nov-2014 09:59:38 AM</td>
+                            </tr>
+                            <tr>
+                                <td>1011</td>
+                                <td>24</td>
+                                <td>20</td>
+                                <td>300</td>
+                                <td>17-Nov-2014 01:40:54 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="my_chart.js"></script>
+    <script>
+        function toggleMenu() {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+    </script>
+    <script>
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+            item.addEventListener('mouseover', activeLink));
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
+    <script>
+        new DataTable('#example');
+    </script>
+</body>
+
+</html>

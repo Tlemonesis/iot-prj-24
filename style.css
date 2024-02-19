@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.contain {
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #1a3c86;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover {
+    background: #f1f1f1;
+}
+.navigation ul li:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.navigation ul li:nth-child(1):hover {
+    background: transparent;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li a.active{
+    color: #1a3c86;
+    background: #f1f1f1;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover a{
+    color: #1a3c86;
+}
+
+.navigation ul li:nth-child(1):hover a {
+    color: #ffffff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fa {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.navigation ul li:hover a .icon .fa {
+    color: #1a3c86;
+}
+.navigation ul li a.active .icon .fa{
+    color: #1a3c86
+}
+.navigation ul li:nth-child(1):hover a .icon .fa {
+    color: #ffffff;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.main .topbar {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #111;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.user {
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: linear-gradient(to bottom left, #ff9b93, #bd261b);
+    border-radius: 1.6rem;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card:nth-child(2) {
+    background: linear-gradient(to bottom left, #93ebff, #0097c5);
+}
+
+.cardBox .card:nth-child(3) {
+    background: linear-gradient(to bottom left, #f9ffa2, #efa700);
+}
+
+.cardBox .card:hover {
+    box-shadow: none;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.5em;
+}
+
+.graphBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+
+.graphBox .box {
+    position: relative;
+    background: #fff;
+    padding: 1.6rem;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.graphBox .box .but {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.graphBox .box .but:nth-child(1){
+    border: 3px solid #1a3c86;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px #9d9d9d;
+}
+
+.graphBox .box .but:nth-child(2){
+    margin-top: 40px;
+    border: 3px solid #1a3c86;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px #9d9d9d;
+    
+}
+
+
+.graphBox .box .off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+}
+
+#lightBulb {
+    padding: 20px;
+}
+
+#fan {
+    max-width: 100px;
+    max-height: 100px;
+    padding: 20px;
+}
+
+#imageButton1 {
+    border: none;
+    cursor: pointer;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+.data-table{
+    padding: 15px;
+}
+
+.cardd {
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    max-width: 100%;
+    height: 670px;
+    margin: auto;
+    text-align: center;
+  }
+  
+.titlee {
+    color: grey;
+    font-size: 18px;
+  }
+  
+.cardd button {
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: 0;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 40%;
+    font-size: 18px;
+  }
+  
+.cardd a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    padding: 20px;
+  }
+  
+.cardd button:hover, .cardd a:hover {
+    opacity: 0.7;
+  }
+
+#pro5{
+    margin-top: 20px;
+    border-radius: 50%;
+    width: 25%;
+}

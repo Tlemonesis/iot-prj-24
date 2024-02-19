@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="contain">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">
+                            <h2>Smart home</h2>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="active">
+                        <span class="icon"><i class="fa fa-table" aria-hidden="true"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data.html">
+                        <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                        <span class="title">Data sensor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="action.html">
+                        <span class="icon"><i class="fa fa-history" aria-hidden="true"></i></span>
+                        <span class="title">Action history</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu();"></div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                    </label>
+                </div>
+                <div class="user">
+                    <a href="profile.html">
+                        <img src="./images/profile-1.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">26°<sup>C</sup></div>
+                        <div class="cardName">Temperature</div>
+                    </div>
+                    <div class="iconBox">
+                        <img src="./images/cloudy.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">50<sup>%</sup></div>
+                        <div class="cardName">Humidity</div>
+                    </div>
+                    <div class="iconBox">
+                        <img src="./images/humidity.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">300<sup>lux</sup></div>
+                        <div class="cardName">Light</div>
+                    </div>
+                    <div class="iconBox">
+                        <img src="./images/lamp.png">
+                    </div>
+                </div>
+            </div>
+            <div class="graphBox">
+                <div class="box">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="box">
+                    <div class="but">
+                        <img id="lightBulb" src="./images/light-off.png" alt="Light bulb off">
+                        <input id="imageButton" type="image" src="./images/button-off.png" alt="Button off"
+                            onclick="toggleBoth()">
+                    </div>
+                    <div class="but">
+                        <img id="fan" src="./images/fan-off.png" alt="Fan">
+                        <input id="imageButton1" type="image" src="./images/button-off1.png" alt="Button off"
+                            onclick="switchFan()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="my_chart.js"></script>
+    <script>
+        function toggleMenu() {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+    </script>
+    <script>
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+            item.addEventListener('mouseover', activeLink));
+    </script>
+    <script>
+        function toggleBoth() {
+            let lightBulb = document.getElementById('lightBulb');
+            let imageButton = document.getElementById('imageButton');
+            if (lightBulb.src.includes("light-off")) {
+                lightBulb.src = "./images/light-on.png";
+                imageButton.src = "./images/button-on.png";
+            } else {
+                lightBulb.src = "./images/light-off.png";
+                imageButton.src = "./images/button-off.png";
+            }
+        }
+    </script>
+    <script>
+        function switchFan() {
+            let fan = document.getElementById('fan');
+            let imageButton1 = document.getElementById('imageButton1');
+            if (fan.src.includes("fan-off")) {
+                fan.src = "./images/fan-on.gif";
+                imageButton1.src = "./images/button-on1.png";
+            } else {
+                fan.src = "./images/fan-off.png";
+                imageButton1.src = "./images/button-off1.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
