@@ -1,7 +1,7 @@
 #iot-dashboard 2024
 
-AdruinoIDE code
-'''
+**AdruinoIDE code**
+'''c++
 #ifdef ESP8266
   #include <ESP8266WiFi.h> /* WiFi library for ESP8266 */
 #else
